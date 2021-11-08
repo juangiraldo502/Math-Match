@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con POO en PHP</title>
+    <style>
+        *{
+            font-family: calibri;
+            font-size: 1em;
+        }
+
+        form{
+            background: lightgray;
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="Main.php" method="get">
+        <input type="text" placeholder="Ingrese el valor 1" name="num1" required>
+        <input type="text" placeholder="Ingrese el valor 2" name="num2" required><hr>
+        <input type="submit" value="Sumar" name="sumar">
+        <input type="submit" value="Restar" name="restar">
+        <input type="submit" value="Multiplicar" name="multiplicar">
+        <input type="submit" value="Dividir" name="dividir">
+        <input type="submit" value="Potenciacion" name="potenciacion">
+        <input type="submit" value="Seno (toma el primer valor)" name="seno">
+        <input type="submit" value="Coseno (toma el primer valor)" name="coseno">
+        <input type="submit" value="Factorial (toma el primer valor)" name="factorial">
+        <input type="button" value="Fibonacci (toma el primer valor)" id="fibonacci" onclick="fibo()">
+    </form>
+    <h1 align="center" style="font-size: 2em;"></h1>
+
+    <script>
+        h1 = document.getElementsByTagName("h1")[0];
+
+        function fibo(){
+            num = document.getElementsByName("num1")[0].value;
+            n1 = 0;
+            n2 = 1;
+            secuencia = []
+    
+            for (var i = 0; i < num; i++) {
+                acumulador = n1 + n2;
+                n1 = n2;
+                n2 = acumulador;
+                secuencia.push(acumulador);
+            }
+            h1.textContent = "Secuencia fibonacci: "+secuencia;
+        }
+    </script>
+
+</body>
+</html>
